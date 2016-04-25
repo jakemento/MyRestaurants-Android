@@ -3,7 +3,14 @@ package com.epicodus.myrestaurants;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 public class RestaurantActivity extends AppCompatActivity {
     public static final String TAG = RestaurantActivity.class.getSimpleName();
@@ -25,7 +32,7 @@ public class RestaurantActivity extends AppCompatActivity {
     private void getRestaurants(String location) {
         YelpService.findRestaurants(location, new Callback() {
             @Override
-            public void onFailure(Call call, IOEXCEPTION e) {
+            public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
             }
             @Override
