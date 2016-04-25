@@ -54,9 +54,10 @@
         android:inputType="phone"
         android:ems="10"
         android:id="@+id/locationEditText"
-        android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/textView"
         android:hint="enter a zip code"
-        android:layout_alignEnd="@+id/textView"
-        android:background="#988e4a" />
+        android:background="#988e4a"
+        android:layout_above="@+id/findRestaurants"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp"
+        android:textAlignment="center" />
 </RelativeLayout>
