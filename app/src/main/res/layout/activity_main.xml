@@ -30,12 +30,13 @@
         android:layout_alignTop="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp"
-        android:textColor="#ff9124"
+        android:textColor="#988e4a"
         android:textSize="33sp"
         android:textStyle="bold"
         android:typeface="monospace"
         android:width="260dp"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:background="#000000" />
 
     <Button
         android:layout_width="wrap_content"
@@ -57,5 +58,5 @@
         android:layout_alignRight="@+id/textView"
         android:hint="enter a zip code"
         android:layout_alignEnd="@+id/textView"
-        android:background="#6c4545" />
+        android:background="#988e4a" />
 </RelativeLayout>
