@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick (View v) {
                 String location = mLocationEditText.getText().toString();
                 Log.d(TAG, location);
-               Intent myIntent = new Intent(MainActivity.this, RestaurantActivity.class);
+               Intent myIntent = new Intent(MainActivity.this, RestaurantListActivity.class);
                 myIntent.putExtra("location", location);
                 startActivity(myIntent);
 
