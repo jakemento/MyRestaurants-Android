@@ -49,7 +49,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mAuthProgressDialog.setTitle("Loading...");
         mAuthProgressDialog.setMessage("Authenticating with Firebase...");
         mAuthProgressDialog.setCancelable(false);
-
+        String signupEmail = mSharedPreferences.getString(Constants.KEY_USER_EMAIL, null);
+        if (signupEmail != null) {
+            mEmailEditText.setText(signupEmail);
+        }
     }
 
     @Override
@@ -65,7 +68,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void loginWithPassword() {
-        String email = mEmailEditText.getText().toString();
+        final String email = mEmailEditText.getText().toString();
         String password = mPasswordEditText.getText().toString();
 
         if (email.equals("")) {
@@ -81,6 +84,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onAuthenticated(AuthData authData) {
                 mAuthProgressDialog.dismiss();
+                mSharedPreferencesEditor.putString(Constants.KEY_USER_EMAIL, email).apply();
                 if (authData != null) {
                     String userId = authData.getUid();
                     mSharedPreferencesEditor.putString(Constants.KEY_UID, userId).apply();
