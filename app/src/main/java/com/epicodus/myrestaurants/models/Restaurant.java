@@ -15,6 +15,7 @@ public class Restaurant {
     double latitude;
     double longitude;
     ArrayList<String> categories = new ArrayList<>();
+    private String pushId;
 
     public Restaurant() {}
 
@@ -33,22 +34,27 @@ public class Restaurant {
     }
 
     public String getName() {
+
         return name;
     }
 
     public String getPhone() {
+
         return phone;
     }
 
     public String getWebsite() {
+
         return  website;
     }
 
     public double getRating() {
+
         return rating;
     }
 
     public String getImageUrl(){
+
         return imageUrl;
     }
 
@@ -67,4 +73,12 @@ public class Restaurant {
     public ArrayList<String> getCategories() {
         return categories;
     }
+
+    public String getPushId() {
+        return pushId;
+    }
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
+
 }
